@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<h2>{{ project.name }}</h2>
+<p><strong>Type:</strong> {{ project.get_project_type_display }}</p>
+<p><strong>Stage:</strong> {{ project.get_stage_display }}</p>
+<p><strong>Description:</strong> {{ project.description }}</p>
+<p><strong>Created By:</strong> {{ project.created_by.username }}</p>
+<p><strong>Last Updated:</strong> {{ project.updated_at }}</p>
+
+<h3>Tasks in This Project</h3>
+<ul>
+  {% for task in project.tasks.all %}
+    <li>
+      {{ task.title }} -
+      {% if task.completed %}
+        <span style="color: green;">Completed</span>
+      {% else %}
+        <span style="color: red;">Not Completed</span>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+{% endblock content %}

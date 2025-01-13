@@ -1,0 +1,13 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<h2>All Projects</h2>
+<ul>
+  {% for project in projects %}
+    <li>
+      <a href="{% url 'project-detail' project.pk %}">{{ project.name }}</a>
+      ({{ project.get_project_type_display }} - {{ project.get_stage_display }})
+    </li>
+  {% endfor %}
+</ul>
+{% endblock content %}

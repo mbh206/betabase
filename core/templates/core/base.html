@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  {% load static tailwind_tags %}
+<head>
+  <meta charset="utf-8">
+  {% tailwind_css %}
+  <title>Betabase</title>
+</head>
+
+<body>
+  <header>
+    <nav class="flex justify-between mx-4 my-2">
+      <h3 class="uppercase">Betabase</h3>
+      <ul class="flex gap-5">
+        <li>Home</li>
+        <li>Projects</li>
+        <li>Profile</li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="flex flex-col gap-2 w-96 m-auto text-center">
+    <h1 class="uppercase text-xl font-bold">Welcome to The Betabase</h1>
+    <a href="{% url 'project-list' %}" class="py-2 text-lg bg-orange-400 rounded">Plan Your Projects Fast & Start Building</a>
+    {% block content %}{% endblock content %}
+  </main>
+</body>
+
+</html>
