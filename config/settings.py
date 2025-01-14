@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'tailwind',
     'betabasetheme',
-    "django_browser_reload",
+    "django_browser_reload"
 ]
 
 TAILWIND_APP_NAME = 'betabasetheme'

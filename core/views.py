@@ -1,5 +1,5 @@
 from django.views.generic import ListView, DetailView
-from .models import Project
+from .models import Project, Task
 from django.views.generic import TemplateView
 
 class ProjectListView(ListView):
@@ -14,3 +14,8 @@ class ProjectDetailView(DetailView):
 
 class HomePageView(TemplateView):
     template_name = 'core/home.html'
+
+class TaskListForProjectView(TemplateView):
+    model = Task
+    template_engine = 'core/task_view.html'
+    context_object_name = 'tasks'

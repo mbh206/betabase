@@ -1,0 +1,169 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "username": "devuser",
+      "email": "devuser@example.com",
+      "is_staff": true,
+      "is_superuser": true,
+      "is_active": true,
+      "password": "123123"
+    }
+  },
+  {
+    "model": "core.organization",
+    "pk": 1,
+    "fields": {
+      "name": "Acme Devs",
+      "members": [1],
+      "created_at": "2025-01-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "core.project",
+    "pk": 1,
+    "fields": {
+      "organization": 1,
+      "name": "API Redesign",
+      "description": "Reworking the existing API for improved performance",
+      "project_type": "web",
+      "stage": "mvp",
+      "created_by": 1,
+      "created_at": "2025-01-02T09:30:00Z",
+      "updated_at": "2025-01-02T09:30:00Z"
+    }
+  },
+  {
+    "model": "core.project",
+    "pk": 2,
+    "fields": {
+      "organization": 1,
+      "name": "Mobile App",
+      "description": "A cross-platform mobile app for our service",
+      "project_type": "mobile",
+      "stage": "idea",
+      "created_by": 1,
+      "created_at": "2025-01-05T10:00:00Z",
+      "updated_at": "2025-01-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.task",
+    "pk": 1,
+    "fields": {
+      "project": 1,
+      "title": "Refactor endpoints",
+      "description": "Clean up and reorganize API endpoints for clarity",
+      "assigned_to": 1,
+      "status": "backlog",
+      "completed": false,
+      "created_at": "2025-01-02T12:00:00Z",
+      "updated_at": "2025-01-02T12:00:00Z"
+    }
+  },
+  {
+    "model": "core.task",
+    "pk": 2,
+    "fields": {
+      "project": 1,
+      "title": "Add caching layer",
+      "description": "Implement Redis caching for frequently accessed data",
+      "assigned_to": null,
+      "status": "in_progress",
+      "completed": false,
+      "created_at": "2025-01-03T08:00:00Z",
+      "updated_at": "2025-01-03T08:00:00Z"
+    }
+  },
+  {
+    "model": "core.task",
+    "pk": 3,
+    "fields": {
+      "project": 2,
+      "title": "Design UI mockups",
+      "description": "Create initial wireframes and UI designs for mobile screens",
+      "assigned_to": 1,
+      "status": "backlog",
+      "completed": false,
+      "created_at": "2025-01-06T09:00:00Z",
+      "updated_at": "2025-01-06T09:00:00Z"
+    }
+  },
+  {
+    "model": "core.page",
+    "pk": 1,
+    "fields": {
+      "project": 2,
+      "name": "Login Screen",
+      "description": "Main login screen for the mobile app",
+      "created_at": "2025-01-06T09:30:00Z",
+      "updated_at": "2025-01-06T09:30:00Z"
+    }
+  },
+  {
+    "model": "core.page",
+    "pk": 2,
+    "fields": {
+      "project": 2,
+      "name": "Dashboard Screen",
+      "description": "Main user dashboard after login",
+      "created_at": "2025-01-06T09:35:00Z",
+      "updated_at": "2025-01-06T09:35:00Z"
+    }
+  },
+  {
+    "model": "core.modeldefinition",
+    "pk": 1,
+    "fields": {
+      "project": 1,
+      "name": "Order",
+      "description": "Represents an e-commerce order in the system",
+      "created_at": "2025-01-03T12:00:00Z",
+      "updated_at": "2025-01-03T12:00:00Z"
+    }
+  },
+  {
+    "model": "core.modeldefinition",
+    "pk": 2,
+    "fields": {
+      "project": 1,
+      "name": "OrderItem",
+      "description": "Line item for an order, referencing products",
+      "created_at": "2025-01-03T12:10:00Z",
+      "updated_at": "2025-01-03T12:10:00Z"
+    }
+  },
+  {
+    "model": "core.relationship",
+    "pk": 1,
+    "fields": {
+      "from_model": 1,
+      "to_model": 2,
+      "relationship_type": "one_to_many",
+      "description": "An Order has many OrderItems"
+    }
+  },
+  {
+    "model": "core.techstackitem",
+    "pk": 1,
+    "fields": {
+      "project": 1,
+      "name": "Django",
+      "version": "3.2",
+      "doc_link": "https://docs.djangoproject.com/",
+      "added_at": "2025-01-02T13:00:00Z"
+    }
+  },
+  {
+    "model": "core.techstackitem",
+    "pk": 2,
+    "fields": {
+      "project": 2,
+      "name": "React Native",
+      "version": "0.71",
+      "doc_link": "https://reactnative.dev/",
+      "added_at": "2025-01-06T10:00:00Z"
+    }
+  }
+]
